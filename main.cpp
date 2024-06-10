@@ -2,14 +2,19 @@
 
 int main()
 {
-    InitWindow(800, 450, "raylib - basic window");
+    const int WINDOW_WIDTH = 750;
+    const int WINDOW_HEIGHT = 750;
+
+    Color GREY = {29, 29, 29, 255};
+
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Game Of Life");
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
     {
         BeginDrawing();
-        ClearBackground(RAYWHITE);
-        DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+        ClearBackground(GREY);
+
         EndDrawing();
     }
     CloseWindow();
