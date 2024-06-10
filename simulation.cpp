@@ -92,3 +92,11 @@ void Simulation::CreateRandomState()
         grid.FillRandom();
     }
 }
+
+void Simulation::ToggleCell(const int row, const int column)
+{
+    if (!IsRunning())
+    {
+        grid.ToggleCell(row, column);
+    }
+}

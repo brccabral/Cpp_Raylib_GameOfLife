@@ -58,6 +58,14 @@ void Grid::Clear()
     }
 }
 
+void Grid::ToggleCell(const int row, const int column)
+{
+    if (IsWithinBounds(row, column))
+    {
+        cells[row][column] = !cells[row][column];
+    }
+}
+
 bool Grid::IsWithinBounds(const int row, const int column) const
 {
     if (row >= 0 && row < rows && column >= 0 && column < columns)

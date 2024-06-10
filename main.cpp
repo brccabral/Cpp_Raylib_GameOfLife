@@ -52,6 +52,14 @@ int main()
             simulation.ClearGrid();
         }
 
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+        {
+            const auto [x, y] = GetMousePosition();
+            const int row = y / CELL_SIZE;
+            const int column = x / CELL_SIZE;
+            simulation.ToggleCell(row, column);
+        }
+
         simulation.Update();
 
         BeginDrawing();

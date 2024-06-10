@@ -20,6 +20,7 @@ public:
     }
     void FillRandom();
     void Clear();
+    void ToggleCell(int row, int column);
 
 private:
 
