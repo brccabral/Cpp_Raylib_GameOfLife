@@ -17,6 +17,17 @@ int main()
 
     while (!WindowShouldClose())
     {
+        if (IsKeyPressed(KEY_ENTER) && !simulation.IsRunning())
+        {
+            simulation.Start();
+            SetWindowTitle("Game Of Life - Running");
+        }
+        else if (IsKeyPressed(KEY_ENTER) && simulation.IsRunning())
+        {
+            simulation.Stop();
+            SetWindowTitle("Game Of Life - Stopped");
+        }
+
         simulation.Update();
 
         BeginDrawing();

@@ -10,9 +10,22 @@ public:
     void SetCellValue(int row, int column, int value);
     [[nodiscard]] int CountLiveNeighbors(int row, int column) const;
     void Update();
+    [[nodiscard]] bool IsRunning() const
+    {
+        return isRunning;
+    }
+    void Start()
+    {
+        isRunning = true;
+    }
+    void Stop()
+    {
+        isRunning = false;
+    }
 
 private:
 
     Grid grid;
     Grid tempGrid;
+    bool isRunning;
 };

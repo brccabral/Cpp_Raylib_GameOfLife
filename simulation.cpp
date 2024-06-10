@@ -1,7 +1,7 @@
 #include "simulation.h"
 
 Simulation::Simulation(const int width, const int height, const int cellSize)
-    : grid(width, height, cellSize), tempGrid(width, height, cellSize)
+    : grid(width, height, cellSize), tempGrid(width, height, cellSize), isRunning(false)
 {
     grid.FillRandom();
 }
@@ -41,6 +41,10 @@ int Simulation::CountLiveNeighbors(int row, int column) const
 
 void Simulation::Update()
 {
+    if (!isRunning)
+    {
+        return;
+    }
     for (int row = 0; row < grid.GetRows(); ++row)
     {
         for (int column = 0; column < grid.GetColumns(); ++column)
