@@ -1,6 +1,7 @@
 #include "simulation.h"
 
-Simulation::Simulation(const int width, const int height, const int cellSize) : grid(width, height, cellSize)
+Simulation::Simulation(const int width, const int height, const int cellSize)
+    : grid(width, height, cellSize), tempGrid(width, height, cellSize)
 {}
 
 void Simulation::Draw() const
@@ -34,4 +35,40 @@ int Simulation::CountLiveNeighbors(int row, int column) const
         liveNeighbors += grid.GetValue(neighborRow, neighborColumn);
     }
     return liveNeighbors;
+}
+
+void Simulation::Update()
+{
+    for (int row = 0; row < grid.GetRows(); ++row)
+    {
+        for (int column = 0; column < grid.GetColumns(); ++column)
+        {
+            const int liveNbr = CountLiveNeighbors(row, column);
+
+            if (grid.GetValue(row, column))
+            {
+                if (liveNbr > 3 || liveNbr < 2)
+                {
+                    tempGrid.SetValue(row, column, 0);
+                }
+                else
+                {
+                    tempGrid.SetValue(row, column, 1);
+                }
+            }
+            else
+            {
+                if (liveNbr == 3)
+                {
+                    tempGrid.SetValue(row, column, 1);
+                }
+                else
+                {
+                    tempGrid.SetValue(row, column, 0);
+                }
+            }
+        }
+    }
+
+    grid = tempGrid;
 }
