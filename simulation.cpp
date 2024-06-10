@@ -2,7 +2,9 @@
 
 Simulation::Simulation(const int width, const int height, const int cellSize)
     : grid(width, height, cellSize), tempGrid(width, height, cellSize)
-{}
+{
+    grid.FillRandom();
+}
 
 void Simulation::Draw() const
 {

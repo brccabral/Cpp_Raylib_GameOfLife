@@ -11,22 +11,18 @@ int main()
 
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Game Of Life");
     SetTargetFPS(60);
+    SetRandomSeed(GetTime());
 
     Simulation simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE);
-    simulation.SetCellValue(5, 29, 1);
-    simulation.SetCellValue(6, 0, 1);
-    simulation.SetCellValue(5, 0, 1);
-    simulation.SetCellValue(4, 0, 1);
-
-    const int liveNbr = simulation.CountLiveNeighbors(5, 29);
 
     while (!WindowShouldClose())
     {
+        simulation.Update();
+
         BeginDrawing();
         ClearBackground(GREY);
 
         simulation.Draw();
-        DrawText(TextFormat("%i", liveNbr), 10, 10, 20, WHITE);
 
         EndDrawing();
     }

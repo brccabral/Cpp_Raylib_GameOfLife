@@ -18,6 +18,7 @@ public:
     {
         return columns;
     }
+    void FillRandom();
 
 private:
 
