@@ -3,9 +3,9 @@
 
 int main()
 {
-    constexpr int WINDOW_WIDTH = 750;
-    constexpr int WINDOW_HEIGHT = 750;
-    constexpr int CELL_SIZE = 25;
+    constexpr int WINDOW_WIDTH = 1200;
+    constexpr int WINDOW_HEIGHT = 800;
+    constexpr int CELL_SIZE = 4;
 
     constexpr Color GREY = {29, 29, 29, 255};
 
