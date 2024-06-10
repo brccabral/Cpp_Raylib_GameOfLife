@@ -14,6 +14,11 @@ int main()
 
     Simulation simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE);
     simulation.SetCellValue(3, 4, 1);
+    simulation.SetCellValue(3, 5, 1);
+    simulation.SetCellValue(4, 5, 1);
+    simulation.SetCellValue(2, 5, 1);
+
+    const int liveNbr = simulation.CountLiveNeighbors(3, 4);
 
     while (!WindowShouldClose())
     {
@@ -21,6 +26,7 @@ int main()
         ClearBackground(GREY);
 
         simulation.Draw();
+        DrawText(TextFormat("%i", liveNbr), 10, 10, 20, WHITE);
 
         EndDrawing();
     }

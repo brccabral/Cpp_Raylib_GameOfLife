@@ -20,8 +20,26 @@ void Grid::Draw() const
 
 void Grid::SetValue(const int row, const int column, const int value)
 {
-    if (row >= 0 && row < rows && column >= 0 && column < columns)
+    if (IsWithinBounds(row, column))
     {
         cells[row][column] = value;
     }
+}
+
+int Grid::GetValue(const int row, const int column) const
+{
+    if (IsWithinBounds(row, column))
+    {
+        return cells[row][column];
+    }
+    return 0;
+}
+
+bool Grid::IsWithinBounds(const int row, const int column) const
+{
+    if (row >= 0 && row < rows && column >= 0 && column < columns)
+    {
+        return true;
+    }
+    return false;
 }
