@@ -22,6 +22,8 @@ public:
     {
         isRunning = false;
     }
+    void ClearGrid();
+    void CreateRandomState();
 
 private:
 

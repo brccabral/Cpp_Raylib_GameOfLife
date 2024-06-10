@@ -43,6 +43,15 @@ int main()
             }
         }
 
+        if (IsKeyPressed(KEY_R))
+        {
+            simulation.CreateRandomState();
+        }
+        else if (IsKeyPressed(KEY_C))
+        {
+            simulation.ClearGrid();
+        }
+
         simulation.Update();
 
         BeginDrawing();

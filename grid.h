@@ -19,6 +19,7 @@ public:
         return columns;
     }
     void FillRandom();
+    void Clear();
 
 private:
 

@@ -47,6 +47,17 @@ void Grid::FillRandom()
     }
 }
 
+void Grid::Clear()
+{
+    for (int row = 0; row < rows; ++row)
+    {
+        for (int column = 0; column < columns; ++column)
+        {
+            cells[row][column] = 0;
+        }
+    }
+}
+
 bool Grid::IsWithinBounds(const int row, const int column) const
 {
     if (row >= 0 && row < rows && column >= 0 && column < columns)

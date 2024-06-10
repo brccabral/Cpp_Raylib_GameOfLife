@@ -2,9 +2,7 @@
 
 Simulation::Simulation(const int width, const int height, const int cellSize)
     : grid(width, height, cellSize), tempGrid(width, height, cellSize), isRunning(false)
-{
-    grid.FillRandom();
-}
+{}
 
 void Simulation::Draw() const
 {
@@ -77,4 +75,20 @@ void Simulation::Update()
     }
 
     grid = tempGrid;
+}
+
+void Simulation::ClearGrid()
+{
+    if (!IsRunning())
+    {
+        grid.Clear();
+    }
+}
+
+void Simulation::CreateRandomState()
+{
+    if (!IsRunning())
+    {
+        grid.FillRandom();
+    }
 }
