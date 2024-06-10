@@ -13,12 +13,12 @@ int main()
     SetTargetFPS(60);
 
     Simulation simulation(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE);
-    simulation.SetCellValue(3, 4, 1);
-    simulation.SetCellValue(3, 5, 1);
-    simulation.SetCellValue(4, 5, 1);
-    simulation.SetCellValue(2, 5, 1);
+    simulation.SetCellValue(5, 29, 1);
+    simulation.SetCellValue(6, 0, 1);
+    simulation.SetCellValue(5, 0, 1);
+    simulation.SetCellValue(4, 0, 1);
 
-    const int liveNbr = simulation.CountLiveNeighbors(3, 4);
+    const int liveNbr = simulation.CountLiveNeighbors(5, 29);
 
     while (!WindowShouldClose())
     {
