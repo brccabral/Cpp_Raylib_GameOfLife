@@ -14,6 +14,8 @@ int main()
     SetTargetFPS(60);
 
     Grid grid(WINDOW_WIDTH, WINDOW_HEIGHT, CELL_SIZE);
+    grid.SetValue(0, 0, 1);
+    grid.SetValue(2, 1, 1);
 
     while (!WindowShouldClose())
     {

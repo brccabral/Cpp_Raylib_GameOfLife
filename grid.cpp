@@ -17,3 +17,11 @@ void Grid::Draw() const
         }
     }
 }
+
+void Grid::SetValue(const int row, const int column, const int value)
+{
+    if (row >= 0 && row < rows && column >= 0 && column < columns)
+    {
+        cells[row][column] = value;
+    }
+}
